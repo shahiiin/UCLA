@@ -1,0 +1,25 @@
+version: '2'
+services:
+
+
+
+
+  #mongodb service
+  form-en-mongo:
+    container_name: form-en-mongo
+    image: mongo:latest
+    volumes:
+      - mongo-vol:/data/db
+    networks:
+      - formnetwork
+
+
+volumes:
+  mongo-vol:
+    driver: local
+
+
+networks:
+  formnetwork:
+    driver: bridge
+      #    external: true
